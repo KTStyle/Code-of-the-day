@@ -52,19 +52,28 @@ public class w1Friday{
 		}
 		return newer;
 	}
+
 	
-	public static String abbSent(String sent) { //Kevin's Code
-        String[] arr = sent.split(" ");
-        for (int i = 0; i < arr.length; i++) {
-            StringBuilder temp = new StringBuilder();
-            if (arr[i].length() > 3) {
-                arr[i] = temp.append(arr[i].charAt(0) + ((arr[i].length() - 2) + "") + arr[i].charAt(arr[i].length() - 1)).toString();
-            }
-        }
-        String retString = arr[0];
-        for(int i = 1; i < arr.length; i++) {
-            retString += (" " + arr[i]);
-        }
-        return retString;
-    }
+	public static String method(String str) //Phuc's method.
+	{
+		String toReturn = "";
+		//int s = str.length();
+		String []array = str.split(" ");
+		//str.substring(0, 1) + (s-2) + str.charAt(s-1);
+		for(int i = 0; i < array.length; i++)
+		{
+			if(array[i].length() > 3)
+			{
+				int s = array[i].length();
+				toReturn +=  array[i].substring(0,1) + (s-2) + array[i].charAt(s-1) + " ";
+				//System.out.println(x);
+			}
+			else
+			{
+				toReturn += array[i] + " ";
+				//System.out.println(array[i]);
+			}
+		}
+		return toReturn;
+	}
 }
